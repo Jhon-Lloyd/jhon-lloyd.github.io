@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jhon Lloyd Cabahug</title>
+<meta name="description" content="Jhon Lloyd Cabahug: QA Engineer, Computer Engineer and Community Leader from Cagayan de Oro, Philippines.">
+<meta name="theme-color" content="#09090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#09090b; --bg-2:#111114; --card:rgba(255,255,255,.035); --card-solid:#121216;
+  --ink:#f4f4f5; --ink-2:#a1a1aa; --ink-3:#71717a; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.16);
+  --pass:#3ddc97; --pass-soft:rgba(61,220,151,.12);
+  --eng:#7aa2ff; --eng-soft:rgba(122,162,255,.12);
+  --cm:#c49bff; --cm-soft:rgba(196,155,255,.12);
+  --ms:#f5b74f; --ms-soft:rgba(245,183,79,.12);
+  --glow:rgba(61,220,151,.16); --glow-2:rgba(122,162,255,.12);
+  --grid:rgba(255,255,255,.035);
+  --sans:Geist,Inter,system-ui,-apple-system,sans-serif; --mono:"Geist Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#fafaf9; --bg-2:#f2f2f0; --card:rgba(255,255,255,.75); --card-solid:#ffffff;
+  --ink:#0b0b0d; --ink-2:#52525b; --ink-3:#7c7c85; --line:rgba(10,10,15,.09); --line-2:rgba(10,10,15,.18);
+  --pass:#0a9b62; --pass-soft:rgba(10,155,98,.10);
+  --eng:#2f5fe0; --eng-soft:rgba(47,95,224,.09);
+  --cm:#7b3fe4; --cm-soft:rgba(123,63,228,.09);
+  --ms:#b26a00; --ms-soft:rgba(178,106,0,.10);
+  --glow:rgba(10,155,98,.10); --glow-2:rgba(47,95,224,.08);
+  --grid:rgba(10,10,15,.04);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#fafaf9; --bg-2:#f2f2f0; --card:rgba(255,255,255,.75); --card-solid:#ffffff;
+    --ink:#0b0b0d; --ink-2:#52525b; --ink-3:#7c7c85; --line:rgba(10,10,15,.09); --line-2:rgba(10,10,15,.18);
+    --pass:#0a9b62; --pass-soft:rgba(10,155,98,.10);
+    --eng:#2f5fe0; --eng-soft:rgba(47,95,224,.09);
+    --cm:#7b3fe4; --cm-soft:rgba(123,63,228,.09);
+    --ms:#b26a00; --ms-soft:rgba(178,106,0,.10);
+    --glow:rgba(10,155,98,.10); --glow-2:rgba(47,95,224,.08);
+    --grid:rgba(10,10,15,.04);
+    color-scheme:light;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+.hero,.contact{overflow:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.005em}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--pass);color:#000}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:120px 0;position:relative}
+.serif{font-family:var(--mono);font-weight:400;font-style:normal;letter-spacing:-.04em;color:var(--ink-2)}
+.mono{font-family:var(--mono)}
+.label{font:500 12px/1 var(--mono);color:var(--ink-3);letter-spacing:.04em;display:flex;align-items:center;gap:10px;margin:0 0 20px}
+.label b{color:var(--pass);font-weight:500}
+.h2{text-wrap:balance;font-size:clamp(36px,5.2vw,64px);font-weight:500;letter-spacing:-.035em;line-height:1.02;margin:0}
+.h2 .serif{display:block;font-size:.6em;line-height:1.3;margin-top:10px}
+.h2 .serif::before{content:"> ";color:var(--pass)}
+.sub{color:var(--ink-2);font-size:18px;max-width:600px;margin:20px 0 0}
+
+/* backdrop */
+.bg-grid{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
+.bg-glow{position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:1100px;height:700px;z-index:-1;background:radial-gradient(closest-side at 35% 50%,var(--glow),transparent),radial-gradient(closest-side at 70% 45%,var(--glow-2),transparent);filter:blur(30px);pointer-events:none}
+.grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* nav */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+nav .mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font:500 13px var(--mono);margin-right:6px}
+nav a.l{font-size:14px;color:var(--ink-2);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s}
+nav a.l:hover{color:var(--ink);background:var(--card)}
+.theme{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;display:grid;place-items:center;margin-left:4px}
+.theme:hover{color:var(--ink)}
+.theme svg{width:16px;height:16px}
+
+/* hero */
+.hero{padding:180px 0 80px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);font:500 13px var(--mono);color:var(--ink-2)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--pass);box-shadow:0 0 0 0 var(--pass);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--pass) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(52px,8vw,108px);font-weight:500;letter-spacing:-.05em;line-height:.92;margin:28px 0 0}
+.hero h1 .tagline{display:block;margin-top:22px;font:400 clamp(17px,2.3vw,28px)/1.35 var(--mono);letter-spacing:-.02em;color:var(--ink-2)}
+.hero h1 .tagline .pr{color:var(--pass)}
+.hero h1 .tagline b{font-weight:500;color:var(--pass)}
+.hero h1 .tagline .cur{display:inline-block;width:.55em;height:1.05em;margin-left:4px;background:var(--pass);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 0}
+.role{font:500 13px var(--mono);padding:7px 12px;border-radius:8px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:8px}
+.role i{width:6px;height:6px;border-radius:2px;display:inline-block}
+.r1{color:var(--pass);background:var(--pass-soft);border-color:transparent} .r1 i{background:var(--pass)}
+.r2{color:var(--eng);background:var(--eng-soft);border-color:transparent} .r2 i{background:var(--eng)}
+.r3{color:var(--cm);background:var(--cm-soft);border-color:transparent} .r3 i{background:var(--cm)}
+.intro{color:var(--ink-2);font-size:18px;max-width:560px;margin:24px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:999px;font-weight:500;font-size:15px;border:1px solid var(--line-2);color:var(--ink);background:transparent;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{background:var(--card);border-color:var(--ink-3)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{transform:translateY(-1px);background:var(--ink)}
+.btn svg{width:16px;height:16px}
+
+/* terminal */
+.term{border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--card-solid) 85%,transparent);backdrop-filter:blur(10px);overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.5)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.term-bar span{width:11px;height:11px;border-radius:50%;background:var(--line-2)}
+.term-bar em{margin-left:auto;font:400 12px var(--mono);color:var(--ink-3);font-style:normal}
+.term-body{padding:20px 20px 22px;font:400 13.5px/1.9 var(--mono);color:var(--ink-2);min-height:318px}
+.term-body .cmd{color:var(--ink)} .term-body .cmd b{color:var(--pass);font-weight:500}
+.ln{opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ln.on{opacity:1;transform:none}
+.ok{color:var(--pass)}
+.dim{color:var(--ink-3)}
+.sum{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2)}
+.sum .ok{font-weight:500}
+.caret{display:inline-block;width:8px;height:15px;background:var(--pass);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:48px;width:max-content;animation:scroll 40s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font:500 15px var(--mono);color:var(--ink-3);white-space:nowrap;display:flex;align-items:center;gap:48px}
+.track span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--line-2)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:56px}
+.tile{position:relative;border:1px solid var(--line);border-radius:22px;background:var(--card);padding:28px;overflow:hidden;isolation:isolate}
+.tile::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent,var(--pass)) 14%,transparent),transparent 60%)}
+.tile:hover::before{opacity:1}
+.tile:hover{border-color:var(--line-2)}
+.t-qa{grid-column:span 3;grid-row:span 2;--accent:var(--pass)}
+.t-eng{grid-column:span 3;--accent:var(--eng)}
+.t-cm{grid-column:span 3;--accent:var(--cm)}
+.t-win{grid-column:span 2;--accent:var(--ms)}
+.t-stat{grid-column:span 2}
+.t-ai{grid-column:span 2;--accent:var(--eng)}
+.kicker{font:500 12px var(--mono);display:inline-flex;align-items:center;gap:8px;margin-bottom:18px}
+.t-qa .kicker{color:var(--pass)} .t-eng .kicker{color:var(--eng)} .t-cm .kicker{color:var(--cm)} .t-win .kicker{color:var(--ms)} .t-ai .kicker{color:var(--eng)}
+.tile h3{font-size:28px;font-weight:500;letter-spacing:-.03em;line-height:1.1;margin:0 0 10px}
+.tile p{color:var(--ink-2);margin:0;font-size:15px}
+.rows{list-style:none;margin:22px 0 0;padding:0}
+.rows li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line)}
+.rows strong{display:block;font-weight:500;font-size:15px}
+.rows small{display:block;color:var(--ink-3);font-size:13px;margin-top:1px}
+.rows .y{font:400 12px var(--mono);color:var(--ink-3);white-space:nowrap;padding-top:3px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.tag{font:500 12px var(--mono);padding:5px 10px;border-radius:7px;border:1px solid var(--line);color:var(--ink-2)}
+/* tech stack block in QA tile */
+.t-qa{display:flex;flex-direction:column}
+.tstack{margin-top:auto;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--bg-2) 70%,transparent);overflow:hidden}
+.t-qa .rows{margin-bottom:24px}
+.stack-hd,.stack-ft{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;font:500 12px var(--mono);color:var(--ink-3)}
+.stack-hd{border-bottom:1px solid var(--line)}
+.stack-hd b,.stack-ft b{color:var(--pass);font-weight:500}
+.stack-grp{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 14px;transition:background .3s}
+.stack-grp+.stack-grp{border-top:1px dashed var(--line)}
+.stack-grp:hover{background:color-mix(in srgb,var(--c) 6%,transparent)}
+.stack-grp>span{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c);padding-top:7px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:7px;font:500 12.5px var(--mono);padding:4px 9px 4px 4px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:default;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s,box-shadow .25s}
+.chip i{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font:600 10px var(--mono);font-style:normal;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c)}
+.chip em{font-style:normal;font-size:11px;color:var(--pass)}
+.chip:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--c) 55%,var(--line));box-shadow:0 8px 20px -10px var(--c)}
+.reveal.in .chip{animation:chipIn .5s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i)*55ms + .35s)}
+.reveal.in .chip em{animation:chipOk .4s backwards;animation-delay:calc(var(--i)*55ms + .7s)}
+@keyframes chipIn{from{opacity:0;transform:translateY(8px) scale(.96)}}
+@keyframes chipOk{from{opacity:0;transform:scale(.4)}}
+.stack-ft{border-top:1px solid var(--line)}
+.bar{flex:1;height:4px;border-radius:4px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pass),color-mix(in srgb,var(--pass) 60%,var(--eng)));transform-origin:left}
+.reveal.in .bar i{animation:barFill 1.6s cubic-bezier(.2,.7,.2,1) .35s backwards}
+@keyframes barFill{from{transform:scaleX(0)}}
+@media (max-width:640px){.stack-grp{grid-template-columns:1fr;gap:8px}.stack-grp>span{padding-top:0}}
+@media (prefers-reduced-motion: reduce){.reveal.in .chip,.reveal.in .chip em,.reveal.in .bar i{animation:none}}
+.big{font-size:64px;font-weight:500;letter-spacing:-.05em;line-height:1;margin:6px 0 8px}
+.big .serif{font-size:.5em;letter-spacing:-.02em;color:inherit}
+.t-win .big{color:var(--ms)}
+.t-win{background:linear-gradient(160deg,var(--ms-soft),var(--card) 60%)}
+
+/* journey */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:44px 0 48px}
+.filters button{font:500 13px var(--mono);height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.filters button i{width:7px;height:7px;border-radius:50%;background:var(--ink-3)}
+.filters button[data-f=quality] i{background:var(--pass)} .filters button[data-f=engineering] i{background:var(--eng)} .filters button[data-f=community] i{background:var(--cm)} .filters button[data-f=milestone] i{background:var(--ms)}
+.filters button:hover{border-color:var(--line-2);color:var(--ink)}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:131px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--line-2),var(--line) 80%,transparent)}
+.ev{display:grid;grid-template-columns:110px 1fr;gap:48px;padding:0 0 14px;position:relative}
+.ev[hidden]{display:none}
+.ev .yr{font:500 13px var(--mono);color:var(--ink-3);text-align:right;padding-top:22px}
+.ev::after{content:"";position:absolute;left:127px;top:25px;width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 0 4px var(--bg),0 0 14px var(--c)}
+.ev{--c:var(--pass)} .ev.engineering{--c:var(--eng)} .ev.community{--c:var(--cm)} .ev.milestone{--c:var(--ms)}
+.ev .box{border:1px solid var(--line);border-radius:16px;padding:18px 22px;background:var(--card);transition:border-color .2s,transform .2s}
+.ev .box:hover{border-color:var(--line-2);transform:translateX(3px)}
+.ev .k{font:500 11px var(--mono);color:var(--c);text-transform:uppercase;letter-spacing:.08em}
+.ev h3{font-size:18px;font-weight:500;letter-spacing:-.015em;margin:6px 0 4px}
+.ev p{margin:0;color:var(--ink-2);font-size:15px}
+.ev.star .box{border-color:color-mix(in srgb,var(--ms) 50%,transparent);background:linear-gradient(120deg,var(--ms-soft),var(--card) 70%)}
+.ev.star h3{font-size:22px}
+.ev.star::after{width:13px;height:13px;left:125px;top:23px}
+
+/* work */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:56px}
+.case{border:1px solid var(--line);border-radius:24px;background:var(--card);overflow:hidden;display:flex;flex-direction:column;position:relative;isolation:isolate}
+.case::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--ms) 10%,transparent),transparent 60%)}
+.case:hover::before{opacity:1}
+.case-top{padding:28px 30px 0}
+.badge{display:inline-flex;align-items:center;gap:8px;font:500 12px var(--mono);color:var(--ms);background:var(--ms-soft);padding:6px 12px;border-radius:999px}
+.case h3{font-size:44px;font-weight:500;letter-spacing:-.04em;margin:22px 0 4px;line-height:1}
+.case .what{color:var(--ink-2);margin:0;font-size:16px}
+.report{margin:24px 30px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.report div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:14px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-2)}
+.report div:first-child{border-top:0}
+.report dt{font:500 12px var(--mono);color:var(--ink-3);padding-top:2px;display:flex;gap:6px}
+.report dt::before{content:"✓";color:var(--pass)}
+.report dd{margin:0}
+.stack{padding:20px 30px 28px;margin-top:auto;display:flex;flex-wrap:wrap;gap:6px}
+
+/* summit gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px;margin-top:56px}
+.ph{position:relative;margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:var(--bg-2)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.04)}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:14px;line-height:1.4}
+.ph figcaption b{display:block;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#f5b74f;margin-bottom:3px}
+.ph.g1{grid-column:span 2;grid-row:span 2}
+.ph.g2{grid-column:span 2}
+.ph.g3 img{object-position:50% 40%}
+.ph.g2 img{object-position:50% 38%}
+.ev-ph{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.ev-ph .ph{height:180px;border-radius:12px}
+.ev-ph .ph figcaption{padding:28px 12px 10px;font-size:13px}
+.ev-ph .ph:last-child img{object-position:50% 70%}
+.ev-ph.one{grid-template-columns:1fr}
+.ev-ph.three{grid-template-columns:1.3fr 1.3fr 1fr}
+.ev-ph.three .ph:nth-child(2) img{object-position:50% 30%}
+.ev-ph.three .ph:last-child img{object-position:78% 55%}
+@media (max-width:640px){.ev-ph.three{grid-template-columns:1fr 1fr}.ev-ph.three .ph:first-child{grid-column:span 2}}
+.ev-ph.one .ph{height:auto;aspect-ratio:16/7}
+.ev-ph.one .ph img{object-position:50% 20%}
+.ev-ph.poster{grid-template-columns:minmax(0,240px)}
+.ev-ph.poster .ph{height:auto;aspect-ratio:1178/1536}
+.ev-ph.poster .ph img{object-position:50% 50%}
+.ev-ph.poster figcaption{display:none}
+.ev-ph.peace25 .ph:nth-child(2) img{object-position:50% 50%}
+.ev-ph.peace25 .ph:last-child img{object-position:50% 25%}
+.ev-ph.agov .ph:nth-child(2) img{object-position:50% 40%}
+.ev-ph.agov .ph:last-child img{object-position:50% 50%}
+.ev-ph.gdg .ph{height:220px}
+.ev-ph.gdg .ph:first-child img{object-position:50% 55%}
+.ev-ph.gdg .ph:last-child img{object-position:50% 45%}
+.case-img{height:220px;border-radius:0;border:0;border-bottom:1px solid var(--line)}
+.case-img img{object-position:50% 35%}
+.live{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font:500 12px var(--mono);padding:5px 12px;border-radius:999px;background:var(--pass);color:#06140b;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.live:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px var(--pass)}
+.inl{color:var(--ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--ms) 60%,transparent);text-underline-offset:3px}
+.inl:hover{color:var(--ms)}
+.summit-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:90vh}
+dialog.lb::backdrop{background:rgba(0,0,0,.85);backdrop-filter:blur(6px)}
+dialog.lb img{max-width:100%;max-height:84vh;border-radius:14px;display:block}
+dialog.lb p{color:#e4e4e7;text-align:center;font-size:14px;margin:12px 0 0}
+dialog.lb button{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:18px;cursor:pointer}
+
+/* awards */
+.awards{margin-top:48px;border-top:1px solid var(--line)}
+.aw{display:grid;grid-template-columns:110px 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .25s}
+.aw:hover{padding-left:10px}
+.aw .y{font:500 13px var(--mono);color:var(--ink-3)}
+.aw b{font-size:20px;font-weight:500;letter-spacing:-.02em}
+.aw span{display:block;color:var(--ink-2);font-size:15px;margin-top:2px}
+.aw .pl{font:500 12px var(--mono);color:var(--ms);white-space:nowrap}
+.certs-hd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:72px 0 20px}
+.certs-hd h3{font-size:28px;font-weight:500;letter-spacing:-.03em;margin:0}
+.certs-hd span{font:400 13px var(--mono);color:var(--ink-3)} .certs-hd b{color:var(--pass);font-weight:500}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cert{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:border-color .25s,transform .25s}
+.cert:hover{border-color:color-mix(in srgb,var(--pass) 40%,var(--line));transform:translateY(-2px)}
+.cert-ph{height:auto;aspect-ratio:4/3;border-radius:12px;background:#f7f8fa}
+.cert-ph img{width:100%;height:100%;object-fit:cover;object-position:0 0}
+.cert-ph figcaption{display:none}
+.cert-k{font:500 12px var(--mono);color:var(--pass)}
+.cert h4{font-size:17px;font-weight:500;letter-spacing:-.02em;line-height:1.3;margin:8px 0 6px}
+.cert p{margin:0;color:var(--ink-3);font-size:14px}
+.cert-v{display:inline-block;margin-top:12px;font:500 12px var(--mono);color:var(--ink);text-decoration:none;padding:5px 11px;border:1px solid var(--line-2);border-radius:999px;transition:border-color .2s,color .2s}
+.cert-v:hover{color:var(--pass);border-color:var(--pass)}
+@media (max-width:980px){.certs{grid-template-columns:1fr}}
+@media (max-width:640px){.cert{grid-template-columns:110px 1fr;gap:14px}.cert h4{font-size:15px}}
+
+/* contact */
+.contact{text-align:center;padding:140px 0 120px}
+.contact .h2{font-size:clamp(40px,6.4vw,88px)}
+.contact .h2 .cur{display:inline-block;width:.55em;height:1em;margin-left:6px;background:var(--pass);vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+.contact .sub{margin:24px auto 0}
+.contact .cta{justify-content:center}
+.mail{display:inline-block;margin-top:40px;font:500 clamp(16px,2.4vw,22px) var(--mono);color:var(--ink);border-bottom:1px solid var(--line-2);padding-bottom:4px;transition:color .2s,border-color .2s}
+.mail:hover{color:var(--pass);border-color:var(--pass)}
+footer{border-top:1px solid var(--line);padding:28px 0;font:400 13px var(--mono);color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);filter:blur(4px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
+.reveal.in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;filter:none;transition:none}
+  .track,.pulse,.caret,.tagline .cur,.contact .h2 .cur{animation:none}
+  .ln{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* responsive */
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .t-qa,.t-eng,.t-cm{grid-column:span 2;grid-row:auto}
+  .t-win,.t-stat,.t-ai{grid-column:span 1}
+  .t-ai{grid-column:span 2}
+  .cases{grid-template-columns:1fr}
+  nav a.l.hide-sm{display:none}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
+  .ph.g1{grid-column:span 2;grid-row:span 2}
+  .ph.g2{grid-column:span 2}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  section{padding:80px 0}
+  .hero{padding:120px 0 56px}
+  nav{top:12px}
+  nav a.l{padding:8px 10px;font-size:13px}
+  .term-body{font-size:12.5px;min-height:0}
+  .bento{grid-template-columns:1fr}
+  .t-qa,.t-eng,.t-cm,.t-win,.t-stat,.t-ai{grid-column:auto}
+  .tile{padding:22px}
+  .tl::before{left:4px}
+  .ev{grid-template-columns:1fr;gap:6px;padding-left:28px}
+  .ev .yr{text-align:left;padding-top:0}
+  .ev::after{left:0;top:5px}
+  .ev.star::after{left:-2px;top:3px}
+  .case-top{padding:22px 22px 0}
+  .report{margin:20px 22px 0}
+  .report div{grid-template-columns:1fr;gap:4px}
+  .stack{padding:18px 22px 22px}
+  .case h3{font-size:36px}
+  .aw{grid-template-columns:1fr;gap:4px}
+  .gallery{grid-template-columns:1fr;grid-auto-rows:220px}
+  .ph.g1,.ph.g2{grid-column:auto;grid-row:auto}
+  .ph.g3{grid-row:span 2}
+  .rows li{flex-direction:column;gap:2px}
+}
+
+/* hero portrait */
+.visual{position:relative}
+.portrait{position:relative;margin:0 0 0 auto;width:80%;aspect-ratio:4/4.7;border-radius:26px;overflow:hidden;border:1px solid var(--line-2);box-shadow:0 40px 90px -40px color-mix(in srgb,var(--pass) 45%,transparent)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:51% 52%;display:block;filter:saturate(1.05) contrast(1.03);transform:scale(1.45);transform-origin:51% 50%}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55))}
+.p-chip{position:absolute;top:14px;left:14px;z-index:1;display:inline-flex;align-items:center;gap:8px;font:500 12px var(--mono);padding:6px 11px;border-radius:999px;background:rgba(10,12,14,.55);backdrop-filter:blur(8px);color:#e8eaed;border:1px solid rgba(255,255,255,.14)}
+.p-chip i{width:7px;height:7px;border-radius:50%;background:var(--pass);box-shadow:0 0 0 3px color-mix(in srgb,var(--pass) 30%,transparent)}
+.visual .term{position:relative;width:84%;margin-top:-96px}
+.visual .term-body{min-height:262px;padding:16px 18px 18px;font-size:12.5px;line-height:1.8}
+@media (min-width:981px) and (max-width:1180px){.visual .term{width:96%}.visual .term-body{font-size:11.5px;padding:14px 14px 16px}}
+@media (max-width:980px){.portrait{width:100%;aspect-ratio:4/3.6}.visual .term{width:94%;margin:-90px auto 0}}
+@media (max-width:640px){.visual .term{width:100%;margin-top:-70px}.visual .term-body{font-size:11.2px;padding:14px 14px 16px}}</style>
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav aria-label="Main">
+  <a class="mark" href="#top" aria-label="Home">JL</a>
+  <a class="l" href="#about">About</a>
+  <a class="l" href="#journey">Journey</a>
+  <a class="l" href="#work">Work</a>
+  <a class="l hide-sm" href="#contact">Contact</a>
+  <button class="theme" id="theme" aria-label="Toggle light and dark mode">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="status"><span class="pulse"></span>Open to QA roles · Cagayan de Oro, PH</span>
+      <h1>Jhon Lloyd Cabahug<span class="tagline"><span class="pr" aria-hidden="true">&gt;</span> builds, breaks, ships it <b>right</b><span class="cur" aria-hidden="true"></span></span></h1>
+      <div class="roles">
+        <span class="role r1"><i></i>QA Engineer</span>
+        <span class="role r2"><i></i>Computer Engineer</span>
+        <span class="role r3"><i></i>Community Leader</span>
+      </div>
+      <p class="intro">Three years testing fintech, healthcare and mobile products. Computer Engineer from USTP. A community leader since my student years, serving tech communities and civic organisations for good governance, peace, and youth and women empowerment.</p>
+      <div class="cta">
+        <a class="btn primary" href="CV_Cabahug_JhonLloyd_2026.pdf" download>Download CV
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v12M6 12l6 6 6-6M5 20h14"/></svg></a>
+        <a class="btn" href="https://linkedin.com/in/jhon-lloyd-cabahug-49026b21b" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/jhon-lloyd" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <div class="visual">
+      <figure class="portrait">
+        <img src="img/jl-field.jpg" alt="Jhon Lloyd sitting on a grass field, smiling, wearing a volunteer ID">
+        <span class="p-chip"><i></i>Outside the test suite</span>
+      </figure>
+    <div class="term" aria-label="Portfolio summary shown as a test run">
+      <div class="term-bar"><span></span><span></span><span></span><em>jhon-lloyd.spec.ts</em></div>
+      <div class="term-body" id="term">
+        <div class="ln cmd"><b>$</b> npx playwright test jhon-lloyd</div>
+        <div class="ln dim">Running 7 tests using 1 worker</div>
+        <div class="ln"><span class="ok">✓</span> has 3+ years in software QA</div>
+        <div class="ln"><span class="ok">✓</span> automates with Playwright, Appium, Pytest</div>
+        <div class="ln"><span class="ok">✓</span> holds a BS in Computer Engineering</div>
+        <div class="ln"><span class="ok">✓</span> tested fintech, healthcare, mobile, web</div>
+        <div class="ln"><span class="ok">✓</span> won 3 innovation awards in 2026</div>
+        <div class="ln"><span class="ok">✓</span> named to PH100 2025 by StellarPH</div>
+        <div class="ln"><span class="ok">✓</span> serves tech and civic communities</div>
+        <div class="ln sum"><span class="ok">7 passed</span> <span class="dim">· 0 failed · ready to ship</span> <span class="caret"></span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-label="Tools and technologies">
+  <div class="track">
+    <span>Playwright</span><span>Appium</span><span>Selenium</span><span>Pytest</span><span>TestNG</span><span>Postman</span><span>Gemini API</span><span>Firebase</span><span>React</span><span>Java</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>Jira</span><span>Figma</span><span>Claude</span>
+    <span>Playwright</span><span>Appium</span><span>Selenium</span><span>Pytest</span><span>TestNG</span><span>Postman</span><span>Gemini API</span><span>Firebase</span><span>React</span><span>Java</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>Jira</span><span>Figma</span><span>Claude</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <p class="label"><b>01</b> / about</p>
+    <h2 class="h2 reveal">An engineer who tests,<span class="serif">and a leader who serves.</span></h2>
+    <p class="sub reveal">Testing taught me to ask what could go wrong. Engineering taught me how it works. Serving communities taught me who it is for.</p>
+
+    <div class="bento">
+      <article class="tile t-qa reveal">
+        <span class="kicker">● Quality engineering</span>
+        <h3>Making releases boring, in the best way.</h3>
+        <p>Test plans, regression, functional, smoke, API and performance testing in Agile teams, with AI built into the workflow.</p>
+        <ul class="rows">
+          <li><div><strong>Quality Assurance Specialist</strong><small>NowServing Healthcare · SeriousMD iOS and web</small></div><span class="y">2024–now</span></li>
+          <li><div><strong>Mobile QA Tester and UI/UX Designer</strong><small>PASYENTE Project, UP Mindanao</small></div><span class="y">2024</span></li>
+          <li><div><strong>Software QA Engineer</strong><small>HSi Technologies (Hyperstack) · fintech</small></div><span class="y">2023–24</span></li>
+          <li><div><strong>Software QA Engineer Intern</strong><small>Skunk Works OPC (Meld CX)</small></div><span class="y">2023</span></li>
+        </ul>
+        <div class="tstack" aria-label="Tech stack">
+          <div class="stack-hd"><span>$ stack <b>--verify</b></span><span>17 tools</span></div>
+          <div class="stack-grp" style="--c:var(--pass)"><span>Automate</span><div class="chips">
+            <span class="chip" style="--i:0"><i>Pw</i>Playwright<em>✓</em></span><span class="chip" style="--i:1"><i>Ap</i>Appium<em>✓</em></span><span class="chip" style="--i:2"><i>Se</i>Selenium<em>✓</em></span><span class="chip" style="--i:3"><i>Pt</i>Pytest<em>✓</em></span><span class="chip" style="--i:4"><i>Tn</i>TestNG<em>✓</em></span><span class="chip" style="--i:5"><i>Po</i>POM<em>✓</em></span>
+          </div></div>
+          <div class="stack-grp" style="--c:var(--ms)"><span>API &amp; data</span><div class="chips">
+            <span class="chip" style="--i:6"><i>Pm</i>Postman<em>✓</em></span><span class="chip" style="--i:7"><i>Fb</i>Firebase<em>✓</em></span><span class="chip" style="--i:8"><i>Gm</i>Gemini API<em>✓</em></span>
+          </div></div>
+          <div class="stack-grp" style="--c:var(--eng)"><span>Code</span><div class="chips">
+            <span class="chip" style="--i:9"><i>Py</i>Python<em>✓</em></span><span class="chip" style="--i:10"><i>Jv</i>Java<em>✓</em></span><span class="chip" style="--i:11"><i>Js</i>JavaScript<em>✓</em></span><span class="chip" style="--i:12"><i>Kt</i>Kotlin<em>✓</em></span><span class="chip" style="--i:13"><i>Re</i>React<em>✓</em></span>
+          </div></div>
+          <div class="stack-grp" style="--c:var(--cm)"><span>Workflow</span><div class="chips">
+            <span class="chip" style="--i:14"><i>Ji</i>Jira<em>✓</em></span><span class="chip" style="--i:15"><i>Fg</i>Figma<em>✓</em></span><span class="chip" style="--i:16"><i>Cl</i>Claude<em>✓</em></span>
+          </div></div>
+          <div class="stack-ft"><span class="bar"><i></i></span><span><b>17/17</b> verified</span></div>
+        </div>
+      </article>
+
+      <article class="tile t-eng reveal">
+        <span class="kicker">● Computer engineering</span>
+        <h3>BS Computer Engineering, USTP</h3>
+        <p>Thesis on computer-vision customer counting and mapping for retail, where I was researcher and QA lead. It became the startup EnYOUmerate, which I co-founded as COO.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Kotlin</span><span class="tag">C</span><span class="tag">Computer vision</span></div>
+      </article>
+
+      <article class="tile t-cm reveal">
+        <span class="kicker">● Community leadership</span>
+        <h3>Serving people, in tech and beyond.</h3>
+        <p>From student leader to young professional, I serve tech communities and civic organisations working on good governance, peace, and youth and women empowerment.</p>
+        <ul class="rows">
+          <li><div><strong>Director, HR and Volunteer Development</strong><small>Andam Higala Inc. · youth and women empowerment</small></div><span class="y">2024–now</span></li>
+          <li><div><strong>Facilitator, from CDO delegate</strong><small>Champions for Peace · Kofi Annan Foundation and KRIS · peace</small></div><span class="y">2025–26</span></li>
+          <li><div><strong>Delegate, pioneering batch</strong><small>ActivateGov by GoodGovPH · good governance</small></div><span class="y">2025</span></li>
+          <li><div><strong>Promotions Lead</strong><small>GDG Cagayan de Oro · tech community</small></div><span class="y">2026–now</span></li>
+          <li><div><strong>Partnership Manager</strong><small>Robogals CDO · girls in STEM</small></div><span class="y">2022–23</span></li>
+          <li><div><strong>COO and VP</strong><small>Google Developer Student Clubs USTP</small></div><span class="y">2021–22</span></li>
+        </ul>
+        <div class="tags"><span class="tag">Good governance</span><span class="tag">Peace</span><span class="tag">Youth empowerment</span><span class="tag">Women empowerment</span><span class="tag">Tech communities</span></div>
+      </article>
+
+      <article class="tile t-win reveal">
+        <span class="kicker">★ Bangkok, 2026</span>
+        <div class="big">1<span class="serif">st</span></div>
+        <p>GDG SEAS Buildathon, representing the Philippines.</p>
+      </article>
+
+      <article class="tile t-stat reveal">
+        <span class="kicker" style="color:var(--ink-3)">● Team</span>
+        <div class="big">40</div>
+        <p>active volunteers led at Andam Higala.</p>
+      </article>
+
+      <article class="tile t-ai reveal">
+        <span class="kicker">● AI-assisted</span>
+        <h3 style="font-size:22px">Spec it, prompt it, then test it hard.</h3>
+        <p>Google AI Studio, Antigravity, Claude and the Gemini API, with every output reviewed and tested.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <p class="label"><b>02</b> / journey</p>
+    <h2 class="h2 reveal">From scholar<span class="serif">to Buildathon champion.</span></h2>
+    <div class="filters" role="group" aria-label="Filter timeline">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="quality" aria-pressed="false"><i></i>Quality</button>
+      <button data-f="engineering" aria-pressed="false"><i></i>Engineering</button>
+      <button data-f="community" aria-pressed="false"><i></i>Community</button>
+      <button data-f="milestone" aria-pressed="false"><i></i>Milestones</button>
+    </div>
+
+    <ol class="tl">
+      <li class="ev milestone"><div class="yr">Nov 2026</div><div class="box"><span class="k">Milestone</span><h3>2nd Runner-Up, DAGITAB 2026 Solution Pitch</h3><p>Pitched with Team Sidehustler at the Northern Mindanao Innovation Challenge, part of the Industry-Academe Innovation Forum and Expo by USTP and CDO b.i.t.e.s. in Cagayan de Oro.</p>
+        <div class="ev-ph three"><figure class="ph"><img src="img/dagitab-team.jpg" alt="Team Sidehustler on stage holding the DAGITAB 2026 2nd Runner-Up cheque" loading="lazy"><figcaption><b>2nd Runner-Up</b>Team Sidehustler on stage</figcaption></figure><figure class="ph"><img src="img/dagitab-fun.jpg" alt="Team Sidehustler posing playfully with the award cheque in front of the DAGITAB screen" loading="lazy"><figcaption><b>DAGITAB 2026</b>Limketkai Luxe Hotel, 18 Nov 2026</figcaption></figure><figure class="ph"><img src="img/dagitab-cert.jpg" alt="DAGITAB 2026 Certificate of Recognition presented to Sidehustler" loading="lazy"><figcaption><b>Certificate</b>Recognition for Sidehustler</figcaption></figure></div></div></li>
+      <li class="ev star milestone"><div class="yr">Sep 2026</div><div class="box"><span class="k">Milestone</span><h3>Champion, GDG SEAS Buildathon in Bangkok</h3><p>Represented the Philippines at the Southeast Asia Community Leads Summit and won first place with <a class="inl" href="https://sertipiko.web.app/" target="_blank" rel="noopener">Sertipiko ↗</a>.</p>
+        <div class="ev-ph three"><figure class="ph"><img src="img/seas-award.jpg" alt="Receiving the Buildathon award on stage at the SEAS Community Leads Summit 2026 in Bangkok" loading="lazy"><figcaption><b>Champion</b>Buildathon award on stage</figcaption></figure><figure class="ph"><img src="img/seas-group.jpg" alt="Community leads from across Southeast Asia holding their country flags at the Bangkok summit" loading="lazy"><figcaption><b>The summit</b>Community leads across Southeast Asia</figcaption></figure><figure class="ph"><img src="img/seas-portrait.jpg" alt="Posing in a GDG Cagayan de Oro shirt in front of a large Google logo" loading="lazy"><figcaption><b>Representing</b>GDG Cagayan de Oro</figcaption></figure></div></div></li>
+      <li class="ev milestone"><div class="yr">Jul 2026</div><div class="box"><span class="k">Milestone</span><h3>Champion, Go Healthy Innovation Challenge</h3><p>Led Team PH3 to first place with Ginhawa, an AI respiratory-screening hearable. Recognised by USTP's Center for Entrepreneurship and Technology among its incubation alumni champions.</p>
+        <div class="ev-ph one"><figure class="ph"><img src="img/gohealthy.jpg" alt="Team PH3 on stage with organisers, holding a certificate at the Go Healthy Innovation Challenge Roadshow 2026" loading="lazy"><figcaption><b>Champion</b>Team PH3 at the Go Healthy Roadshow 2026</figcaption></figure></div></div></li>
+      <li class="ev community"><div class="yr">2026</div><div class="box"><span class="k">Community</span><h3>Facilitator, Champions for Peace National Workshop</h3><p>Came back as a facilitator a year after joining as a delegate, leading Group E at the 2026 National Workshop on Resilience and Social Cohesion in Iligan City.</p>
+        <div class="ev-ph three"><figure class="ph"><img src="img/peace-facilitating.jpg" alt="Speaking into a microphone during a workshop session" loading="lazy"><figcaption><b>Facilitating</b>Leading a workshop session</figcaption></figure><figure class="ph"><img src="img/peace-group.jpg" alt="Three workshop participants smiling together" loading="lazy"><figcaption><b>Workshop</b>With fellow champions</figcaption></figure><figure class="ph"><img src="img/peace-facilitator-card.jpg" alt="Champions for Peace Iligan facilitator card for Jhon Lloyd G. Cabahug, Group E" loading="lazy"><figcaption><b>Facilitator</b>Group E, Iligan</figcaption></figure></div></div></li>
+      <li class="ev community"><div class="yr">2026</div><div class="box"><span class="k">Community</span><h3>Promotions Lead, GDG Cagayan de Oro</h3><p>Running promotions for the chapter's events, from Google I/O Extended to DevFest.</p>
+        <div class="ev-ph gdg"><figure class="ph"><img src="img/gdg-group.jpg" alt="GDG Cagayan de Oro community members posing behind large Google letters" loading="lazy"><figcaption><b>Community</b>GDG Cagayan de Oro</figcaption></figure><figure class="ph"><img src="img/gdg-speaking.jpg" alt="Speaking at the podium during a GDG Cagayan de Oro event" loading="lazy"><figcaption><b>On stage</b>Speaking at a chapter event</figcaption></figure></div></div></li>
+      <li class="ev milestone"><div class="yr">2025</div><div class="box"><span class="k">Milestone</span><h3>Named to the PH100 2025 by StellarPH</h3><p>The annual list of the brightest and most ambitious minds in the Philippines under 30.</p>
+        <div class="ev-ph poster"><figure class="ph"><img src="img/ph100.jpg" alt="StellarPH PH100 2025 graphic: Jhon Lloyd Cabahug, Quality Assurance Specialist, NowServing Healthcare Corporation" loading="lazy"><figcaption><b>PH100 2025</b>Organised by StellarPH</figcaption></figure></div></div></li>
+      <li class="ev community"><div class="yr">Aug 2025</div><div class="box"><span class="k">Community</span><h3>Champion for Peace, Power with YOUth</h3><p>One of two champions chosen to represent Cagayan de Oro among 100 young leaders nationwide, training on resilience and social cohesion in Zamboanga City. A Kofi Annan Foundation and KRIS programme.</p>
+        <div class="ev-ph three peace25"><figure class="ph"><img src="img/peace25-group.jpg" alt="Group photo of the Power with YOUth: Champions for Peace delegates in Zamboanga City" loading="lazy"><figcaption><b>The champions</b>100 young leaders in Zamboanga City</figcaption></figure><figure class="ph"><img src="img/peace25-cultural.jpg" alt="Delegates in traditional attire at the Champions for Peace Cultural Night" loading="lazy"><figcaption><b>Cultural Night</b>Celebrating the cultures of Mindanao and beyond</figcaption></figure><figure class="ph"><img src="img/peace25-portrait.jpg" alt="Jhon Lloyd in front of the Champions for Peace banners, an Andam Higala update" loading="lazy"><figcaption><b>Delegate</b>Representing Andam Higala</figcaption></figure></div></div></li>
+      <li class="ev community"><div class="yr">Jun 2025</div><div class="box"><span class="k">Community</span><h3>ActivateGov pioneering batch, GoodGovPH</h3><p>Represented Cagayan de Oro with team Higala in GoodGovPH's flagship governance-education program, completing the Mindanao culmination in June 2025.</p>
+        <div class="ev-ph three agov"><figure class="ph"><img src="img/activategov-group.jpg" alt="ActivateGov Mindanao participants holding GoodGovPH certificates" loading="lazy"><figcaption><b>Culmination</b>ActivateGov Mindanao 2025</figcaption></figure><figure class="ph"><img src="img/activategov-team.jpg" alt="Team Higala with their GoodGovPH certificates, an Andam Higala update" loading="lazy"><figcaption><b>Team Higala</b>Representing Cagayan de Oro</figcaption></figure><figure class="ph"><img src="img/activategov-mindanao.jpg" alt="GoodGovPH ActivateGov Mindanao teams: Peace Echoes, Team LUPAD, Team RYLO, Binhi Agsur and Higala" loading="lazy"><figcaption><b>Mindanao teams</b>Higala among five teams</figcaption></figure></div></div></li>
+      <li class="ev milestone"><div class="yr">Apr 2025</div><div class="box"><span class="k">Milestone</span><h3>1st Runner-Up, Lambigit: Innovate to Impact</h3><p>A reverse hackathon for professionals at the 2nd Northern Mindanao Research and Innovation Summit (RIS 2025), hosted by USTP with DTI. Placed second with team 3 &amp; 1.</p>
+        <div class="ev-ph"><figure class="ph"><img src="img/lambigit-pitch.jpg" alt="Team 3 and 1 presenting their pitch at the Innovate to Impact hackathon" loading="lazy"><figcaption><b>Pitch</b>Presenting with team 3 &amp; 1</figcaption></figure><figure class="ph"><img src="img/lambigit-award.jpg" alt="Holding certificates of recognition from the Innovate to Impact hackathon" loading="lazy"><figcaption><b>Recognition</b>Certificates of recognition</figcaption></figure></div></div></li>
+      <li class="ev quality"><div class="yr">2024</div><div class="box"><span class="k">Quality</span><h3>QA Specialist, NowServing (SeriousMD)</h3><p>Owning test plans and release testing for healthcare apps on iOS and web, with Claude in the QA workflow.</p></div></li>
+      <li class="ev community"><div class="yr">2024</div><div class="box"><span class="k">Community</span><h3>Director, Andam Higala Inc.</h3><p>Leading HR and volunteer development for 40 members equipping women and youth with economic skills.</p></div></li>
+      <li class="ev quality"><div class="yr">2023</div><div class="box"><span class="k">Quality</span><h3>Software QA Engineer, HSi Technologies</h3><p>Built mobile automation in Java with Appium and web automation with Playwright for fintech apps.</p></div></li>
+      <li class="ev engineering"><div class="yr">2023</div><div class="box"><span class="k">Engineering</span><h3>Graduated BS Computer Engineering</h3><p>Thesis on computer-vision customer counting and mapping. CEA Outstanding Scholar and KINANAO Exemplar Awardee.</p></div></li>
+      <li class="ev quality"><div class="yr">2023</div><div class="box"><span class="k">Quality</span><h3>First QA role at Skunk Works (Meld CX)</h3><p>Wrote test cases, led accuracy testing and built first automation with Pytest and Selenium.</p></div></li>
+      <li class="ev engineering"><div class="yr">2022</div><div class="box"><span class="k">Engineering</span><h3>Co-founded EnYOUmerate</h3><p>A computer-vision startup for retail foot traffic. Top 6 at the Philippine Startup Challenge 7 regionals.</p></div></li>
+      <li class="ev community"><div class="yr">2022</div><div class="box"><span class="k">Community</span><h3>Partnership Manager, Robogals CDO</h3><p>Secured sponsors and grants for a chapter getting girls into STEM.</p></div></li>
+      <li class="ev community"><div class="yr">2021</div><div class="box"><span class="k">Community</span><h3>COO and VP, Google Developer Student Clubs USTP</h3><p>Ran operations across 10+ projects, including finances and partnerships.</p></div></li>
+      <li class="ev engineering"><div class="yr">2019</div><div class="box"><span class="k">Engineering</span><h3>Started Computer Engineering at USTP</h3><p>After graduating Senior High as salutatorian.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="label"><b>03</b> / featured work</p>
+    <h2 class="h2 reveal">Built for communities.<span class="serif">Tested like production.</span></h2>
+    <div class="cases">
+      <article class="case reveal">
+        <figure class="ph case-img"><img src="img/seas-award.jpg" alt="Receiving the Buildathon award at the SEAS Community Leads Summit 2026 in Bangkok" loading="lazy"><figcaption><b>Bangkok 2026</b>Buildathon award on stage</figcaption></figure>
+        <div class="case-top">
+          <span class="badge">★ Champion · SEAS Buildathon 2026</span>
+          <h3>Sertipiko</h3>
+          <p class="what">AI-powered event evaluation and e-certificate kiosk</p>
+        </div>
+        <dl class="report">
+          <div><dt>problem</dt><dd>GDG Cagayan de Oro needed faster feedback collection and certificates at busy events.</dd></div>
+          <div><dt>build</dt><dd>Directed AI tools from a written spec. Added Gemini badges, sentiment analysis and AI event summaries.</dd></div>
+          <div><dt>quality</dt><dd>Tested end to end: mobile, read-only visitors, offline mode. Caught an exposed API key and rotated it.</dd></div>
+          <div><dt>result</dt><dd>Live at Google I/O Extended 2026, set for DevFest 2026, first place in Bangkok.</dd></div>
+        </dl>
+        <div class="stack"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">Firebase</span><span class="tag">Gemini API</span><span class="tag">Apps Script</span><a class="live" href="https://sertipiko.web.app/" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="case reveal">
+        <figure class="ph case-img"><img src="img/gohealthy.jpg" alt="Team PH3 receiving recognition at the Go Healthy Innovation Challenge Roadshow 2026" loading="lazy"><figcaption><b>Go Healthy 2026</b>Team PH3 on stage</figcaption></figure>
+        <div class="case-top">
+          <span class="badge">★ Champion · Go Healthy 2026</span>
+          <h3>Ginhawa</h3>
+          <p class="what">AI-powered respiratory screening hearable</p>
+        </div>
+        <dl class="report">
+          <div><dt>problem</dt><dd>Respiratory screening is rarely part of everyday life, so problems are caught late.</dd></div>
+          <div><dt>approach</dt><dd>A hearable that turns every workout into a silent respiratory screening.</dd></div>
+          <div><dt>my role</dt><dd>Team leader, researcher and QA for a team of three. Tested the prototype and demo flow before the pitch.</dd></div>
+          <div><dt>result</dt><dd>First place at the Go Healthy Innovation Challenge Roadshow 2026.</dd></div>
+        </dl>
+        <div class="stack"><span class="tag">Team PH3</span><span class="tag">GDG CDO</span><span class="tag">CET Incubation</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="summit" style="padding-top:40px">
+  <div class="wrap">
+    <p class="label"><b>04</b> / highlight</p>
+    <h2 class="h2 reveal">Agents of Change,<span class="serif">Bangkok 2026.</span></h2>
+    <p class="sub reveal">Chosen to represent GDG Cagayan de Oro and the Philippines at the Google Developer Groups Southeast Asia Community Leads Summit, where Sertipiko won the summit's first Buildathon.</p>
+    <div class="summit-meta"><span class="tag">11–13 Sep 2026</span><span class="tag">Bangkok, Thailand</span><span class="tag">GDG SEAS</span><span class="tag" style="color:var(--ms);border-color:color-mix(in srgb,var(--ms) 40%,transparent)">★ Buildathon champion</span></div>
+    <div class="gallery">
+      <figure class="ph g1 reveal"><img src="img/seas-group.jpg" alt="Community leads from across Southeast Asia at the Agents of Change summit in Bangkok, holding their country flags" loading="lazy"><figcaption><b>The summit</b>Community leads from across Southeast Asia and beyond</figcaption></figure>
+      <figure class="ph g2 reveal"><img src="img/seas-award.jpg" alt="Receiving the Buildathon award on stage at the SEAS Community Leads Summit 2026" loading="lazy"><figcaption><b>Champion</b>Receiving the Buildathon award on stage</figcaption></figure>
+      <figure class="ph g3 reveal"><img src="img/seas-portrait.jpg" alt="Posing in a GDG Cagayan de Oro shirt in front of a large Google logo" loading="lazy"><figcaption><b>Representing</b>GDG Cagayan de Oro</figcaption></figure>
+      <figure class="ph reveal"><img src="img/seas-networking.jpg" alt="Summit participants cheering at the community networking night" loading="lazy"><figcaption><b>Networking night</b>Building a regional network</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<dialog class="lb" id="lb"><button aria-label="Close" id="lb-close">✕</button><img alt=""><p></p></dialog>
+
+<section id="recognition" style="padding-top:40px">
+  <div class="wrap">
+    <p class="label"><b>05</b> / recognition</p>
+    <h2 class="h2 reveal">Awards<span class="serif">and honours.</span></h2>
+    <div class="awards">
+      <div class="aw"><span class="y">2026</span><div><b>DAGITAB 2026 Solution Pitch</b><span>Northern Mindanao Innovation Challenge · Team Sidehustler</span></div><span class="pl">2nd Runner-Up</span></div>
+      <div class="aw"><span class="y">2026</span><div><b>SEAS Community Leads Summit Buildathon</b><span>Google Developer Groups Southeast Asia · Bangkok</span></div><span class="pl">Champion</span></div>
+      <div class="aw"><span class="y">2026</span><div><b>Go Healthy Innovation Challenge Roadshow</b><span>Team PH3 · Ginhawa</span></div><span class="pl">Champion</span></div>
+      <div class="aw"><span class="y">2025</span><div><b>PH100 2025</b><span>StellarPH · brightest minds in the Philippines under 30</span></div><span class="pl">Honoree</span></div>
+      <div class="aw"><span class="y">2025</span><div><b>Power with YOUth: Champions for Peace</b><span>One of two Cagayan de Oro champions among 100 young leaders</span></div><span class="pl">Delegate</span></div>
+      <div class="aw"><span class="y">2025</span><div><b>ActivateGov by GoodGovPH</b><span>Pioneering batch · good governance education</span></div><span class="pl">Delegate</span></div>
+      <div class="aw"><span class="y">2025</span><div><b>Lambigit: Innovate to Impact Hackathon</b><span>Reverse hackathon · Northern Mindanao Research and Innovation Summit 2025</span></div><span class="pl">1st Runner-Up</span></div>
+      <div class="aw"><span class="y">2023</span><div><b>KINANAO Exemplar Awardee</b><span>Outstanding exemplar scholar, Cagayan de Oro City</span></div><span class="pl">Scholar</span></div>
+      <div class="aw"><span class="y">2023</span><div><b>CEA Outstanding Scholar</b><span>Sole awardee, College of Engineering and Architecture, USTP</span></div><span class="pl">Scholar</span></div>
+      <div class="aw"><span class="y">2022</span><div><b>Philippine Startup Challenge 7</b><span>DICT Region 10 · EnYOUmerate</span></div><span class="pl">Top 6</span></div>
+    </div>
+
+    <div class="certs-hd reveal"><h3>Certifications</h3><span><b>&gt;</b> 2 courses · 34.5 hours of QA training</span></div>
+    <div class="certs">
+      <article class="cert reveal">
+        <figure class="ph cert-ph"><img src="img/cert-appium.jpg" alt="Udemy certificate of completion: Appium Mobile Testing (Android/iOS) from Scratch + Frameworks, Jhon Lloyd Cabahug, Nov 16, 2023" loading="lazy"><figcaption><b>Udemy</b>Appium Mobile Testing (Android/iOS)</figcaption></figure>
+        <div class="cert-body">
+          <span class="cert-k">✓ Udemy · Nov 2023</span>
+          <h4>Appium: Mobile Testing (Android/iOS) from Scratch + Frameworks</h4>
+          <p>Rahul Shetty · 25.5 hours</p>
+          <a class="cert-v" href="https://ude.my/UC-2fa7bfda-5582-4daf-bf99-c968b672e63c" target="_blank" rel="noopener">Verify ↗</a>
+        </div>
+      </article>
+      <article class="cert reveal">
+        <figure class="ph cert-ph"><img src="img/cert-software-tester.jpg" alt="Udemy certificate of completion: Software Tester: From Zero To Hero, Jhon Lloyd Cabahug, Aug 29, 2023" loading="lazy"><figcaption><b>Udemy</b>Software Tester: From Zero To Hero</figcaption></figure>
+        <div class="cert-body">
+          <span class="cert-k">✓ Udemy · Aug 2023</span>
+          <h4>Software Tester: From Zero To Hero</h4>
+          <p>Michele Spoldi · 9 hours</p>
+          <a class="cert-v" href="https://ude.my/UC-9623cc68-fe5c-4d50-8b20-4d393161994c" target="_blank" rel="noopener">Verify ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="bg-glow" aria-hidden="true" style="top:auto;bottom:-300px"></div>
+  <div class="wrap">
+    <p class="label" style="justify-content:center"><b>06</b> / contact</p>
+    <h2 class="h2 reveal">Found a bug in your plans?<span class="serif">let's fix it together.<span class="cur" aria-hidden="true"></span></span></h2>
+    <p class="sub">Open to QA engineering roles, speaking engagements, and partnerships with tech and civic communities across Southeast Asia.</p>
+    <a class="mail" href="mailto:johnlloydcabahug14@gmail.com">johnlloydcabahug14@gmail.com ↗</a>
+    <div class="cta">
+      <a class="btn" href="https://linkedin.com/in/jhon-lloyd-cabahug-49026b21b" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/jhon-lloyd" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="CV_Cabahug_JhonLloyd_2026.pdf" download>CV</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Jhon Lloyd G. Cabahug</span><span>All tests passing <span style="color:var(--pass)">●</span></span></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  try{var t=localStorage.getItem('theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lines=document.querySelectorAll('#term .ln');
+  lines.forEach(function(l,i){ if(reduce) l.classList.add('on'); else setTimeout(function(){l.classList.add('on');},300+i*260); });
+
+  var fb=document.querySelectorAll('.filters button'), evs=document.querySelectorAll('.ev');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    fb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    evs.forEach(function(ev){ev.hidden=!(f==='all'||ev.classList.contains(f));});
+  });});
+
+  document.querySelectorAll('.tile,.case').forEach(function(el){
+    el.addEventListener('pointermove',function(e){
+      var r=el.getBoundingClientRect();
+      el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      el.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+  });
+
+  var lb=document.getElementById('lb');
+  if(lb && lb.showModal){
+    document.querySelectorAll('.ph').forEach(function(f){
+      f.addEventListener('click',function(){
+        var img=f.querySelector('img');
+        lb.querySelector('img').src=img.src; lb.querySelector('img').alt=img.alt;
+        lb.querySelector('p').textContent=f.querySelector('figcaption').textContent.replace(/^(\S+( \S+)?)(?=[A-Z])/, '$1 · ');
+        lb.showModal();
+      });
+    });
+    document.getElementById('lb-close').addEventListener('click',function(){lb.close();});
+    lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});
+  }
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+    els.forEach(function(el){io.observe(el);});
+  } else els.forEach(function(el){el.classList.add('in');});
+})();
+</script>
+</body>
+</html>
